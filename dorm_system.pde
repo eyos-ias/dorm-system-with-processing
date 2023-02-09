@@ -58,7 +58,7 @@ void draw () {
    container5.draw(); 
    
   }
-  //println(mouseX);
+  println(mouseX,mouseY);
 }
 
 void mousePressed () {
