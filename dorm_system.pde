@@ -39,7 +39,6 @@ void setup () {
  }
 
 void draw () {
- // println(mouseX, mouseY);
   background (white);
   if (page==1) {
     container1.draw ();
@@ -58,7 +57,7 @@ void draw () {
    container5.draw(); 
    
   }
-  println(mouseX,mouseY);
+  
 }
 
 void mousePressed () {
