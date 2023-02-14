@@ -80,10 +80,10 @@ void page4Logic() {
         //writing changes to the file
         PrintWriter writer = createWriter("students.csv");
         writer.println("ID,Name,Sex,Age,Department,Batch,Dorm");
-        for (int i = 0; i < studentList.length; i++) {
-            Student s = studentList[i];
-            writer.println(s.studentId + "," + s.studentName + "," + s.studentSex + "," + s.studentAge + "," + s.studentDept + "," + s.studentBatch + "," + s.studentDorm);
-        }
+        for (Student s : studentList) {
+    writer.println(s.studentId + "," + s.studentName + "," + s.studentSex + "," + s.studentAge + "," + s.studentDept + "," + s.studentBatch + "," + s.studentDorm);
+}
+
         writer.flush();
         writer.close();
         newDorm.value = "";

@@ -1,4 +1,4 @@
-//master
+//resizable
 /* 
   PAGE 1 = SIGN IN
   PAGE 2 = SELECTION
@@ -6,27 +6,28 @@
   PAGE 4 = CHANGE ID & CHANGE PAGE/RESULT
   PAGE 5 = CREATE ID, CREATE INFORMATION & SUCCESS PAGE
 */
-Student[] studentList;
+
 Container container1, container2, container3, container4, container5; // Container of UI Elements (TextFields, DropDownMenus & Buttons) for different pages
 int page=1;
 String allowedNumbers = "1234567890";
+ArrayList<Student> studentList = new ArrayList<Student>();
+
 void setup () {
-  // adds the students in the csv to an array of student objects
+   // adds the students in the csv to an array of student objects
    String[] lines = loadStrings("students.csv");
-   studentList = new Student[lines.length -1];
    for(int i = 1; i<lines.length; i++){
-    String[] studentData = split(lines[i], ",");
-    String id = studentData[0];
-    String name = studentData[1];
-    String sex = studentData[2];
-    String age = studentData[3];
-    String department = studentData[4];
-    String batch = studentData[5];
-    String dorm = studentData[6];
-    studentList[i-1] = new Student(id, name, sex, age, department, batch, dorm);
+      String[] studentData = split(lines[i], ","); 
+      String id = studentData[0];
+      String name = studentData[1];
+      String sex = studentData[2];
+      String age = studentData[3];
+      String department = studentData[4];
+      String batch = studentData[5];
+      String dorm = studentData[6];
+      studentList.add(new Student(id, name, sex, age, department, batch, dorm));
    }
    
-   println(studentList.length);
+   println(studentList.size());
   
   
   size (1366, 768);

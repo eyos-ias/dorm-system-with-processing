@@ -146,20 +146,19 @@ void page5Logic() {
             println("form not filled");
         } else{
             println("form filled");
-            Student newStudent = new Student(newStudentName.value, newStudentSex.value, newStudentAge.value, newStudentDept.value, newStudentBatch.value, newStudentDorm.value, creatableUserId.value);
-            // studentList.add(newStudent);
+            Student newStudent = new Student(creatableUserId.value, newStudentName.value, newStudentSex.value, newStudentAge.value, newStudentDept.value, newStudentBatch.value, newStudentDorm.value);
+            studentList.add(newStudent);
             
-            // Student[] newStudentList = new Student[studentList.length];
-            // studentList = append(studentList, newStudent);
-            //  studentList = append(studentList, new Student("98765", "John Doe", "Male", "20", "Computer Science", "2023", "Dorm A"));
-            // PrintWriter writer = createWriter("students.csv");
-            // writer.println("ID,Name,Sex,Age,Department,Batch,Dorm");
-            // for (int i = 0; i < studentList.length; i++) {
-            //     Student s = studentList[i];
-            //     writer.println(s.studentId + "," + s.studentName + "," + s.studentSex + "," + s.studentAge + "," + s.studentDept + "," + s.studentBatch + "," + s.studentDorm);
-            // }
-            // writer.flush();
-            // writer.close();
+            
+            PrintWriter writer = createWriter("students.csv");
+            writer.println("ID,Name,Sex,Age,Department,Batch,Dorm");
+            for (Student s: studentList) {
+                
+                writer.println(s.studentId + "," + s.studentName + "," + s.studentSex + "," + s.studentAge + "," + s.studentDept + "," + s.studentBatch + "," + s.studentDorm);
+            }
+            writer.flush();
+            writer.close();
+            
             println("student added");
             newStudentName.value = "";
             newStudentSex.value = "";
@@ -168,30 +167,10 @@ void page5Logic() {
             newStudentBatch.value = "";
             newStudentDorm.value = "";
             creatableUserId.value = "";
-            
+            studentExistss = false;
+            }
+        
+        
         }
-        
-        
-    }
     
-}
-
-
-// void addStudenttoCsv() {
-//     if (newStudentName.value.equals("") || newStudentSex.value.equals("") || newStudentAge.value.equals("") || newStudentDept.value.equals("") || newStudentBatch.value.equals("") || newStudentDorm.value.equals("")) {
-//         println("form not filled");
-//     } else{
-//         println("form filled");
-//         Student newStudent = new Student(newStudentName.value, newStudentSex.value, newStudentAge.value, newStudentDept.value, newStudentBatch.value, newStudentDorm.value, creatableUserId.value);
-//         studentList.add(newStudent);
-//         println("student added");
-//         newStudentName.value = "";
-//         newStudentSex.value = "";
-//         newStudentAge.value = "";
-//         newStudentDept.value = "";
-//         newStudentBatch.value = "";
-//         newStudentDorm.value = "";
-//         creatableUserId.value = "";
-
-//     }
-// }
+    }
