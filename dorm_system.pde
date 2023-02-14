@@ -27,6 +27,7 @@ void setup () {
       studentList.add(new Student(id, name, sex, age, department, batch, dorm));
    }
    
+   
    println(studentList.size());
   
   
