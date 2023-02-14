@@ -10,21 +10,15 @@ void sideBar() {
   noStroke();
   fill(#F9F8F8);
   rect (0, 0, 293, 768);
-  //image(profileBackground, 0, 0);
-  //image (profile, 19, 36);
+
   fill(255);
   circle(240, 30, 33);
 
   fill (255);
-  //textFont (fonts.roboto.medium);
   textSize (25);
   textAlign(LEFT, CENTER);
   text (userName.value, 30, 165);
 
-  //moon.disableStyle();
-  //shapeMode(CENTER);
-  //fill(blue);
-  //shape(moon, 241, 30);
 }
 void clearContainerValues(Container c) {
   for (int i = 0; i<c.size(); i++) {
@@ -32,16 +26,7 @@ void clearContainerValues(Container c) {
       TextField tf = (TextField) c.get (i);
       tf.value = "";
     } 
-    
-    //else if (c.get(i).getClass() == DropDownMenu.class ) {
-    //  DropDownMenu ddm = (DropDownMenu) c.get (i);
-    //  ddm.value = "";
-    //}
-    
-    else if (c.get(i).getClass() == Search.class ) {
-      Search src = (Search) c.get (i);
-      src.value = "";
-    }
+ 
   }
 }
 boolean emptyTextFieldError(Container c) {
@@ -64,14 +49,7 @@ String valuesJoin(Container c) {
       TextField tf = (TextField) c.get (i);
       joinedValue+= tf.label.substring(0, 2)+":" + tf.value + ",";
     }
-    //else if (c.get(i).getClass() == DropDownMenu.class ) {
-    //  DropDownMenu ddm = (DropDownMenu) c.get (i);
-    //  joinedValue+= ddm.label.substring(0, 2)+":" + ddm.value + ",";
-    //}
-    else if (c.get(i).getClass() == Search.class ) {
-      Search src = (Search) c.get (i);
-      joinedValue+= src.placeholder.substring(0, 2)+":" + src.value + ",";
-    }
+
   }
   joinedValue=joinedValue.substring(0, joinedValue.length()-1);
   return joinedValue;
@@ -83,10 +61,7 @@ void fillContainerValues(Container c, String[] s) {
       TextField tf = (TextField) c.get (i);
       tf.value = s[i];
     } 
-    //else if (c.get(i).getClass() == DropDownMenu.class ) {
-    //  DropDownMenu ddm = (DropDownMenu) c.get (i);
-    //  ddm.value = s[i];
-    //}
+
   }
 }
 

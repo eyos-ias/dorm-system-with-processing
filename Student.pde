@@ -16,22 +16,6 @@ class Student {
     this.studentBatch = batch;
     this.studentDorm = dorm;
   }
-  
-  //void changeName(String newName){
-  //  this.studentName = newName;
-  //}
-  //void changeSex(String newSex){
-  // this.studentName = newSex; 
-  //}
-  //void changeAge(String newAge){
-  //  this.studentAge = newAge;
-  //}
-  //void changeDept(String newDept){
-  //  this.studentDept = newDept;
-  //}
-  //void changeBatch(String newBatch){
-  //  this.studentBatch = newBatch;
-  //}
   void changeDorm(String newDorm){
    this.studentDorm = newDorm; 
   }

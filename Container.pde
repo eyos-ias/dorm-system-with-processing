@@ -16,14 +16,6 @@ class Container {
         Button btn = (Button) container.get(a);
         btn.draw();
       } 
-      //else if (container.get (a).getClass() == DropDownMenu.class) {
-      //  DropDownMenu ddm = (DropDownMenu) container.get (a);
-      //  ddm.draw ();
-      //} 
-      else if (container.get (a).getClass() == Search.class) {
-        Search src = (Search) container.get (a);
-        src.draw ();
-      }
     }
   }
 
@@ -33,17 +25,10 @@ class Container {
         TextField tf = (TextField) container.get (a);
         tf.mousePressed ();
       } 
-      //else if (container.get (a).getClass() == DropDownMenu.class) {
-      //  DropDownMenu ddm = (DropDownMenu) container.get (a);
-      //  ddm.mousePressed ();
-      //} 
       
       else if (container.get(a).getClass() == Button.class) {
         Button btn = (Button) container.get(a);
         btn.mousePressed();
-      } else if (container.get(a).getClass() == Search.class) {
-        Search src = (Search) container.get(a);
-        src.mousePressed();
       }
     }
   }
@@ -56,10 +41,8 @@ class Container {
       } else if (container.get (a).getClass() == Button.class) {
         Button btn = (Button) container.get(a);
         btn.keyPressed();
-      } else if (container.get (a).getClass() == Search.class) {
-        Search src = (Search) container.get(a);
-        src.keyPressed();
-      }
+      } 
+    
     }
   }
 
@@ -72,9 +55,7 @@ class Container {
       for (int a = 0; a < container.size (); a ++) {
         if (!(
           container.get (a).getClass() == TextField.class ||
-          //container.get (a).getClass() == DropDownMenu.class || 
-          container.get(a).getClass() == Button.class || 
-          container.get(a).getClass() == Search.class
+          container.get(a).getClass() == Button.class 
           ))
           continue;
 
@@ -92,15 +73,6 @@ class Container {
             break;
           }
         } 
-        //else if (container.get (a).getClass() == DropDownMenu.class) {
-        //  DropDownMenu ddm = (DropDownMenu) container.get (a);
-        //  if (ddm.active) {
-        //    ddm.active = false;
-        //    container.set (a, ddm);
-        //    activateElement (index);
-        //    break;
-        //  }
-        //}
         else if (container.get (a).getClass() == Button.class) {
           Button btn = (Button) container.get (a);
           if (btn.active) {
@@ -109,15 +81,7 @@ class Container {
             activateElement (index);
             break;
           }
-        } else if (container.get (a).getClass() == Search.class) {
-          Search src = (Search) container.get (a);
-          if (src.active) {
-            src.active = false;
-            container.set (a, src);
-            activateElement (index);
-            break;
-          }
-        }
+        } 
       }
     }
   }
@@ -128,22 +92,13 @@ class Container {
       tf.active = true;
       container.set (index, tf);
     } 
-    
-    //else if (container.get (index).getClass() == DropDownMenu.class) {
-    //  DropDownMenu ddm = (DropDownMenu) container.get (index);
-    //  ddm.active = true;
-    //  container.set (index, ddm);
-    //} 
-    
+     
     else if (container.get(index).getClass()==Button.class) {
       Button btn = (Button) container.get(index);
       btn.active = true;
       container.set(index, btn);
-    } else if (container.get(index).getClass()==Search.class) {
-      Search src = (Search) container.get(index);
-      src.active = true;
-      container.set(index, src);
-    }
+    } 
+    
   }
 
   void append (Object o) {

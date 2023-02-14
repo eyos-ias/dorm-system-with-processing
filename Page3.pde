@@ -79,9 +79,8 @@ void page3Logic() {
   }
   if (searchButton.clicked) {
     studentExists=false;
-    println("clicked");
+    //println("clicked");
     for (Student student : studentList) {
-
       if (student.studentId.equals(searchableUserId.value)) {
         searchedStudent = student;
         studentExists=true;

@@ -8,8 +8,8 @@
 */
 Student[] studentList;
 Container container1, container2, container3, container4, container5; // Container of UI Elements (TextFields, DropDownMenus & Buttons) for different pages
-int page=4;
-
+int page=1;
+String allowedNumbers = "1234567890";
 void setup () {
   // adds the students in the csv to an array of student objects
    String[] lines = loadStrings("students.csv");
@@ -50,14 +50,13 @@ void draw () {
     page3UI();
     container3.draw();
   } else if(page ==4){
-   page4UI();
    container4.draw();
+   page4UI();
   } else if(page == 5){
-    page5UI();
    container5.draw(); 
-   
+   page5UI();
   }
-  
+  //println(mouseX,mouseY);
 }
 
 void mousePressed () {
@@ -93,7 +92,7 @@ void keyPressed () {
   } else if(page ==4){
      container4.keyPressed(); 
   } else if(page ==5){
-   container4.keyPressed(); 
+   container5.keyPressed(); 
   }
 }
 

@@ -22,9 +22,7 @@ class Button {
   int ORIENTATION = RIGHT;
 
   PShape icon;
-  //PFont font;
-
-  //Fonts fonts;
+  
 
   void setProperties (String label, float x, float y, float w, float h) {
     this.x = x;
@@ -33,8 +31,7 @@ class Button {
     this.h = h;
 
     this.label = label;
-    //fonts = new Fonts();
-    //this.font = fonts.roboto.regular;
+    
   }
 
   void setIcon (String path, int ORIENTATION) {
@@ -97,8 +94,6 @@ class Button {
   void button () {
     rect (x, y, w, h, cornerRadius);
 
-
-    //textFont (font);
     fill(textFill);
     textSize (size);
 

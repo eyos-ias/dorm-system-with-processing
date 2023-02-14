@@ -60,6 +60,9 @@ void page4UI() {
         text("Dorm: " + changeableStudent.studentDorm, width / 2 - 300, 155);
         
 } else {
+    fill(255);
+    noStroke();
+    rect(222, 319, 384, 61);
 }
     
 }
@@ -83,7 +86,6 @@ void page4Logic() {
         }
         writer.flush();
         writer.close();
-        
         newDorm.value = "";
     }
     if(continueButton.clicked) {
@@ -108,10 +110,10 @@ void page4Logic() {
 }
     
     if (BackToPage2Button.clicked) {
+        changeableUserId.value = "";
         studentExists = false;
         page= 2;
         println("back to page 2 from page 4");  
-        
     }
     }
         
